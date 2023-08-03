@@ -12,9 +12,7 @@ const Services = () => {
             built only for you
           </h3>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit
-            autem unde numquam nisi
+            Customers themselves, customers will be able to pursue the success of the company.
           </p>
         </article>
         <div className="services-center">

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+// import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Contact = () => {
   return (
@@ -9,9 +9,8 @@ const Contact = () => {
         <h3>Join our news letter and get 20% off</h3>
         <div className="content">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-            sint unde quaerat ratione soluta veniam provident adipisci cumque
-            eveniet tempore?
+            The company itself is a very successful company. Would they be content
+            to be able to find a reason to ask for forgiveness if it happened at the right time?
           </p>
           <form
             className="contact-form"

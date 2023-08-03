@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { PageHero } from "../components";
-import aboutImg from "../assets/hero-bcg.jpeg";
+import aboutImg from "../assets/about-page.jpg";
 
 const AboutPage = () => {
   return (
     <main>
-      <PageHero title='about'/>
+      <PageHero title='about' />
       <Wrapper className="page section section-center">
         <img src={aboutImg} alt="nice desk" />
         <article>
@@ -15,16 +15,12 @@ const AboutPage = () => {
             <div className="underline"></div>
           </div>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
-            accusantium sapiente tempora sed dolore esse deserunt eaque
-            excepturi, delectus error accusamus vel eligendi, omnis beatae.
-            Quisquam, dicta. Eos quod quisquam esse recusandae vitae neque
-            dolore, obcaecati incidunt sequi blanditiis est exercitationem
-            molestiae delectus saepe odio eligendi modi porro eaque in libero
-            minus unde sapiente consectetur architecto. Ullam rerum, nemo iste
-            ex, eaque perspiciatis nisi, eum totam velit saepe sed quos
-            similique amet. Ex, voluptate accusamus nesciunt totam vitae esse
-            iste.
+            Customers themselves, customers will be able to pursue the success of the company.
+            Let the time of those who accuse the wise run away, but let them suffer, and they will receive them.
+            Anyone, said. Those blinded by denial of life or pain, falling into flattery,
+            carrying out grudges are often chosen by hatred when choosing a path, and beyond by less freedom than an opinion.
+            Wise architects can pursue it. None of these things, unless you see clearly, usually want the whole of him,
+            but people like him. From that, we accuse them of having fun, they don't know that this is the whole of life.
           </p>
         </article>
       </Wrapper>
