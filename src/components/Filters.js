@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { useFilterContext } from "../context/filter_context";
 import { getUniqueValues, formatPrice } from "../utils/helpers";
 import { FaCheck } from "react-icons/fa";
+import { useEffect } from "react";
 
 const Filters = () => {
   const {
     filters: {
       text,
       category,
-      company,
+      brand,
       color,
       min_price,
       price,
@@ -21,10 +22,12 @@ const Filters = () => {
     all_products,
   } = useFilterContext();
 
+  useEffect(() => {
+  })
   const categories = getUniqueValues(all_products, "category");
-  const companies = getUniqueValues(all_products, "company");
+  const brands = getUniqueValues(all_products, "brand");
   const colors = getUniqueValues(all_products, "colors");
-
+  console.log(brands)
   return (
     <Wrapper>
       <div className="content">
@@ -53,10 +56,12 @@ const Filters = () => {
                     type="button"
                     name="category"
                     className={`${
-                      category === c.toLowerCase() ? "active" : null
+                      category === c ? "active" : null
+                      // category === c.toLowerCase() ? "active" : null
                     }`}
                   >
                     {c}
+                    {/* {console.log(c)} */}
                   </button>
                 );
               })}
@@ -65,14 +70,14 @@ const Filters = () => {
           {/* end of categories */}
           {/* companies */}
           <div className="form-control">
-            <h5>company</h5>
+            <h5>brand</h5>
             <select
-              name="company"
-              value={company}
+              name="brand"
+              value={brand}
               onChange={updateFilters}
-              className="company"
+              className="brand"
             >
-              {companies.map((c, index) => {
+              {brands.map((c, index) => {
                 return (
                   <option value={c} key={index}>
                     {c}
@@ -192,7 +197,7 @@ const Wrapper = styled.section`
   .active {
     border-color: var(--clr-grey-5);
   }
-  .company {
+  .brand {
     background: var(--clr-grey-10);
     border-radius: var(--radius);
     border-color: transparent;

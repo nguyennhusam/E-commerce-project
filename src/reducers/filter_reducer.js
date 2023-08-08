@@ -34,26 +34,29 @@ const filter_reducer = (state, action) => {
     const { sort, filtered_products } = state;
     let tempProducts = [...filtered_products];
     if (sort === "price-lowest") {
-      tempProducts = tempProducts.sort((a, b) => {
-        if (a.price < b.price) {
-          return -1;
-        }
-        if (a.price > b.price) {
-          return 1;
-        }
-        return 0;
+      tempProducts = filtered_products.sort((a, b) => {
+        // if (a.price < b.price) {
+        //   return -1;
+        // }
+        // if (a.price > b.price) {
+        //   return 1;
+        // }
+        // return 0;
+        return a.price - b.price
       });
     }
     if (sort === "price-highest") {
-      tempProducts = tempProducts.sort((a, b) => b.price - a.price);
+      tempProducts = filtered_products.sort((a, b)=>{
+        return b.price - a.price
+      });
     }
     if (sort === "name-a") {
-      tempProducts = tempProducts.sort((a, b) => {
+      tempProducts = filtered_products.sort((a, b) => {
         return a.name.localeCompare(b.name);
       });
     }
     if (sort === "name-z") {
-      tempProducts = tempProducts.sort((a, b) => {
+      tempProducts = filtered_products.sort((a, b) => {
         return b.name.localeCompare(a.name);
       });
     }
@@ -65,14 +68,15 @@ const filter_reducer = (state, action) => {
   }
   if (action.type === FILTER_PRODUCTS) {
     const { all_products } = state;
-    const { text, category, company, color, price, shipping } = state.filters;
+    const { text, category, brand, color, price, shipping } = state.filters;
 
     let tempProducts = [...all_products];
     // filtering
     // text
     if (text) {
       tempProducts = tempProducts.filter((product) => {
-        return product.name.toLowerCase().startsWith(text);
+        product.name.startsWith(text);
+        // product.name.toLowerCase().startsWith(text);
       });
     }
     // category
@@ -82,9 +86,9 @@ const filter_reducer = (state, action) => {
       );
     }
     // company
-    if (company !== "all") {
+    if (brand !== "all") {
       tempProducts = tempProducts.filter(
-        (product) => product.company === company
+        (product) => product.brand === brand
       );
     }
     // colors
@@ -110,7 +114,7 @@ const filter_reducer = (state, action) => {
       filters: {
         ...state.filters,
         text: "",
-        company: "all",
+        brand: "all",
         category: "all",
         color: "all",
         price: state.filters.max_price,

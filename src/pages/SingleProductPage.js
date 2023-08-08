@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
 import { single_product_url as url } from "../utils/constants";
 import { formatPrice } from "../utils/helpers";
@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 const SingleProductPage = () => {
   const { id } = useParams();
-  const history = useHistory();
+  const navigate = useNavigate();
   const {
     single_product_loading: loading,
     single_product_error: error,
@@ -26,16 +26,15 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
-  }, [id]);
+  }, [id]); 
 
   useEffect(() => {
-    console.log(error);
     if (error) {
       setTimeout(() => {
-        history.push("/");
+        navigate('/');
       }, 3000);
     }
-  }, []);
+  }, [error,navigate]);
 
   if (loading) {
     return <Loading />;
@@ -51,7 +50,7 @@ const SingleProductPage = () => {
     stars,
     reviews,
     id: sku,
-    company,
+    brand,
     images,
   } = product;
   return (
@@ -78,7 +77,7 @@ const SingleProductPage = () => {
             </p>
             <p className="info">
               <span>Brand : </span>
-              {company}
+              {brand}
             </p>
             <hr />
             {stock > 0 && <AddToCart product={product}/>}

@@ -24,24 +24,25 @@ export const services = [
     icon: <GiCompass />,
     title: 'mission',
     text:
-      'Customers themselves, customers will be able to pursue the success of the company. Joy, Tolerances for the corrupt, get rid of them',
+      'Customers themselves, will be able to pursue the success of the company.',
   },
   {
     id: 2,
     icon: <GiDiamondHard />,
     title: 'vision',
     text:
-      'Customers themselves, customers will be able to pursue the success of the company. Joy, Tolerances for the corrupt, get rid of them',
+      'Customers themselves, customers will be able to pursue the success of the company.',
   },
   {
     id: 3,
     icon: <GiStabbedNote />,
     title: 'history',
     text:
-      'Customers themselves, customers will be able to pursue the success of the company. Joy, Tolerances for the corrupt, get rid of them',
+      'Customers themselves, will be able to pursue the success of the company.',
   },
 ]
 
-export const products_url = 'https://course-api.com/react-store-products'
+export const products_url = '/.netlify/functions/products'
 
-export const single_product_url = `https://course-api.com/react-store-single-product?id=`
+// export const single_product_url = `https://course-api.com/react-store-single-product?id=`
+export const single_product_url = `/.netlify/functions/single-product?id=`
