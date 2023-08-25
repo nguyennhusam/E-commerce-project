@@ -14,11 +14,13 @@ const AuthWrapper = ({ children }) => {
     )
   }
   if (error) {
-    <Wrapper>
-      <h1>
-        {error.message}
-      </h1>
-    </Wrapper>
+    return (
+      <Wrapper>
+        <h1>
+          {error.message}
+        </h1>
+      </Wrapper>
+    )
   }
   return <>{children}</>
 }
